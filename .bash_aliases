@@ -1,3 +1,9 @@
+# Keep `vim` as standard Vim; use the Neovim config through `vi` or `nvim`.
+unalias vim 2>/dev/null || true
+if command -v nvim >/dev/null 2>&1; then
+    alias vi='nvim'
+fi
+
 venv() {
     if [ "$1" = "-d" ]; then
         if [ -n "$VIRTUAL_ENV" ]; then

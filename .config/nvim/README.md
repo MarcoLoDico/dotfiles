@@ -20,7 +20,7 @@ ln -s ~/src/dotfiles/.config/nvim ~/.config/nvim
 Recommended tools:
 
 ```sh
-brew install neovim ripgrep fd
+brew install neovim ripgrep fd tree-sitter-cli
 ```
 
 Open Neovim with:
@@ -39,16 +39,45 @@ On first launch, `lazy.nvim` installs the plugins automatically. You can manage 
 
 The leader key is `Space`.
 
-Common mappings:
+Press `Space` and pause to see available commands.
+
+### Everyday editing
+
+Normal Vim editing still works: `i` inserts, `Esc` returns to normal mode, `y` copies,
+`d` cuts/deletes, `p` pastes, `u` undoes, and `<C-r>` redoes. Copy and paste use the
+macOS system clipboard. You can drag with the mouse to select text; a normal click only
+places the cursor. Command shortcuts work when supported by the terminal; the matching Control
+shortcuts always work. (`Ctrl-q` now opens Vim's visual-block mode.)
 
 | Key | Action |
 | --- | --- |
-| `<Space>w` | Save |
+| `<C-s>` or `<Space>w` | Save |
 | `<Space>q` | Quit |
-| `<Space>e` | Open file explorer |
+| `<Space>e` | Show/hide the left file tree |
+| Mouse drag | Select text |
+| `Cmd-c` / `Ctrl-c` | Copy selection |
+| `Cmd-x` / `Ctrl-x` | Cut selection |
+| `Cmd-v` / `Ctrl-v` | Paste |
+| `Cmd-z` / `Ctrl-z` | Undo |
+| `Cmd-Shift-z` / `Ctrl-y` | Redo |
+| `Cmd-a` / `Ctrl-a` | Select the whole file |
+| `<Space>p` | Paste from system clipboard |
+| `<Space>d` | Delete without replacing copied text |
+| `<Space>x` | Remove a character without replacing copied text |
+| Visual `p` | Replace selection while keeping copied text |
+| Visual `<Space>y` | Explicitly copy to system clipboard |
+| `Shift-h` / `Shift-l` | Previous / next open file |
+| `Alt-j` / `Alt-k` | Move current line or selected lines |
+| Visual `<` / `>` | Indent while keeping selection |
 | `<Space>h` | Clear search highlight |
 | `<Space>tw` | Trim trailing whitespace |
 | `<C-h/j/k/l>` | Move between splits |
+
+## Browsing files
+
+A project tree opens on the left automatically. Single-click a file to open it, or click
+a folder to expand it. The tree stays open so you can quickly move between files. Press
+`<Space>e` to hide or show it, and `<C-h>` / `<C-l>` to move between the tree and editor.
 
 ## Finding files and text
 
